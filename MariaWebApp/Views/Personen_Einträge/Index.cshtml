@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Person_Eintrag>
+@{
+    ViewData["Titel"] = "Liste von  Personen-Einträgen";
+}
+<div style="position:fixed;left :25px;top:75px" class="text-white">
+    <a asp-controller="Einträge" asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-circle"></i>Hinzufügen</a>
+
+</div>
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <table class="table">
+            <thead>
+                <tr class="align-middle">
+
+                    <th>@Html.DisplayNameFor(model => model.EintragId)</th>
+                    <th>@Html.DisplayNameFor(model => model.PersonId)</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                 {
+                  <tr>
+                    <td class="class=" align-middle">
+
+                        @Html.DisplayFor(modelItem => item.EintragId)
+
+                    </td>
+                    <td class="class=" align-middle">
+
+                        @Html.DisplayFor(modelItem => item.PersonId)
+
+                    </td>
+                    
+                 </tr>
+                 }
+
+            </tbody>
+        </table>
+
+    </div>
+</div>

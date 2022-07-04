@@ -1,0 +1,82 @@
+﻿@model Organ
+@{
+
+    ViewData["Titel"] = "Detials von Organ";
+}
+<div class="" row text>
+    <div class="col-md-8 offset-2">
+        <p>
+            <h4> Datiels von @Model.Name  </h4>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+
+                <div class="row">
+                    <div class="col-md-6">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" readonly />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Logo" class="control-label"></label>
+                    <input asp-for="Logo" class="form-control" readonly />
+                    <span asp-validation-for="Logo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Strasse" class="control-label"></label>
+                    <input asp-for="Strasse" class="form-control" readonly />
+                    <span asp-validation-for="Strasse" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PLZ" class="control-label"></label>
+                    <input asp-for="PLZ" class="form-control" readonly />
+                    <span asp-validation-for="PLZ" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Ort" class="control-label"></label>
+                    <input asp-for="Ort" class="form-control" readonly />
+                    <span asp-validation-for="Ort" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Land" class="control-label"></label>
+                    <input asp-for="Land" class="form-control" readonly />
+                    <span asp-validation-for="Land" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Telefon" class="control-label"></label>
+                    <input asp-for="Telefon" class="form-control" readonly />
+                    <span asp-validation-for="Telefon" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="eMail" class="control-label"></label>
+                    <input asp-for="eMail" class="form-control" readonly />
+                    <span asp-validation-for="eMail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OrganCategory" class="control-label"></label>
+                    <input asp-for="OrganCategory" class="form-control" readonly />
+                    <span asp-validation-for="OrganCategory" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Beschreibung" class="control-label"></label>
+                    <input asp-for="Beschreibung" class="form-control" readonly />
+                    <span asp-validation-for="Beschreibung" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                    <label asp-for="OrganId" class="control-label"></label>
+                    <input asp-for="OrganId" class="form-control" readonly />
+                    <span asp-validation-for="OrganId" class="text-danger"></span>
+                </div>*@
+
+                <div class="form-group">
+
+                    <a class="btn btn-outline-success float-right" asp-action="Edit" asp-route-id="@Model.Id">Bearbeiten</a>
+                    <a class="btn btn-outline-secondary" asp-action="Index">Zurück</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

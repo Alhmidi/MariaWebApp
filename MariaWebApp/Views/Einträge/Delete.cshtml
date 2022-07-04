@@ -1,0 +1,40 @@
+﻿@model Eintrag
+
+@{
+    ViewData["Title"] = "Details von Eintrag";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <div class="card mb-3" style="max-width: 800px; height:200px">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <div class="card-header text-white bg-info">
+                        <p class="card-text">
+                            <h5 class="card-title">
+                                <b>EintragNr : </b> @Model.Id
+                            </h5>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="card-body">
+                        <p class="card-text"><b>Datum :</b>@Model.CreateDatetime</p>
+                        
+                        <div class="form-group">
+                            <form asp-action="Delete">
+                                <input type="hidden" asp-for="Id" />
+                                <input type="submit" value="Bestätigung" class="btn btn-danger float-right" />
+                            </form>
+                            <a class="btn btn-outline-info" asp-controller="Einträge" asp-action="Details" asp-route-id="@Model.Id">
+                                <i class="bi bi-eye"></i>Details
+                            </a> |
+                            <a class="btn btn-outline-secondary" asp-action="Index">Zurück</a>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+       </div>
+    </div>
+</div>
+

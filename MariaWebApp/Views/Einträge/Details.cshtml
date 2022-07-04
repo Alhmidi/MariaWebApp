@@ -1,0 +1,63 @@
+﻿@model Eintrag
+
+@{
+    ViewData["Title"] = "Details von Eintrag";
+}
+
+<div class="row">
+        <div class="col-md-8 offset-2">
+            <div class="card mb-3" style="max-width: 800px; height:400px">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-info">
+                            <p class="card-text">
+                                <h5 class="card-title">
+                                    <b>EintragNr : </b> @Model.Id  
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="card-body">
+                            <p class="card-text"><b>Datum :</b>@Model.CreateDatetime</p>
+                            <p class="card-text">
+                                <b>Personen : </b>
+                                <hr />
+                                <div class="row">
+                                    @foreach (var person in Model.Personen_Einträge)
+                                    {
+                                            
+                                        <div class="column text-center">
+
+                                            <a class="btn btn-outline-info" asp-controller="Personen" asp-action="Details" asp-route-id="@person.PersonId">
+                                                <div class="column text-center">
+
+                                                    @person.Personen.PersonCategory
+
+                                                </div>
+                                                <i class="bi bi-eye"></i>Details
+                                            </a>      |
+                                        </div>
+                                    }
+                                </div>
+                            </p>
+                            <p class="card-text" >
+                            <b>Inhalt : 
+                            </b>@Model.EintragInhalt
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card-footer ">
+                            <p class="card-text">
+                                <a class="btn btn-outline-primary float-right" asp-action="Index">
+                                    <i class="bi bi"></i>Zurück
+                                </a>      
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+

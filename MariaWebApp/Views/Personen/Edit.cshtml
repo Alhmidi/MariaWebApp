@@ -1,0 +1,83 @@
+﻿@model Person
+@using MariaWebApp.Data
+@{
+
+    ViewData["Titel"] = "Person bearbeiten";
+}
+<div class="" row text>
+    <div class="col-md-8 offset-2">
+        <p>
+            <h4>Person bearbeiten </h4>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Vorname" class="control-label"></label>
+                        <input asp-for="Vorname" class="form-control" />
+                        <span asp-validation-for="Vorname" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Nachname" class="control-label"></label>
+                        <input asp-for="Nachname" class="form-control" />
+                        <span asp-validation-for="Nachname" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Strasse" class="control-label"></label>
+                        <input asp-for="Strasse" class="form-control" />
+                        <span asp-validation-for="Strasse" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PLZ" class="control-label"></label>
+                        <input asp-for="PLZ" class="form-control" />
+                        <span asp-validation-for="PLZ" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Ort" class="control-label"></label>
+                        <input asp-for="Ort" class="form-control" />
+                        <span asp-validation-for="Ort" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Land" class="control-label"></label>
+                        <input asp-for="Land" class="form-control" />
+                        <span asp-validation-for="Land" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Telefon" class="control-label"></label>
+                        <input asp-for="Telefon" class="form-control" />
+                        <span asp-validation-for="Telefon" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="eMail" class="control-label"></label>
+                        <input asp-for="eMail" class="form-control" />
+                        <span asp-validation-for="eMail" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PersonCategory" class="control-label"></label>
+                        <select asp-for="PersonCategory" class="form-control" asp-items="Html.GetEnumSelectList<PersonCategory>()"></select>
+                        <span asp-validation-for="PersonCategory" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Bemerkung" class="control-label"></label>
+                        <input asp-for="Bemerkung" class="form-control" />
+                        <span asp-validation-for="Bemerkung" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="OrganId" class="control-label"></label>
+                        <input asp-for="OrganId" class="form-control" />
+                        <span asp-validation-for="OrganId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Speichern" class="btn btn-outline-success float-right" />
+                        <a class="btn btn-outline-secondary" asp-action="Index">Zurück</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
